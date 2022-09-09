@@ -1,0 +1,39 @@
+#druid数据源信息
+druid:
+  driverClassName: com.mysql.cj.jdbc.Driver
+  url: jdbc:mysql://localhost:3306/furniture?characterEncoding=utf-8
+  username: root
+  password: 123456
+server:
+  servlet:
+    #虚拟路径
+    context-path: /furniture
+  #项目运行端口号
+  port: 8090
+spring:
+  servlet:
+    multipart:
+      max-file-size: 2MB
+  web:
+    resources:
+      static-locations: classpath:/static/
+#删除是1 未删除是0
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+#分页每页数量
+pageSize:
+  #订单6个
+  order: 6
+  #家具
+  furniture:
+    #搜索查询 10 个
+    bySearch: 10
+    #分类查询 8 个
+    byCategory: 8
+  #评论 6 个
+  comment: 6
